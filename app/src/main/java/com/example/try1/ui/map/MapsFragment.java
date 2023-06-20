@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.google.android.libraries.places.api.Places;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
@@ -70,6 +72,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.S)
     @Override
     public void onMapReady(GoogleMap map) {
         googleMap = map;
@@ -80,6 +83,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     }
 
     //method get current location
+    @RequiresApi(api = Build.VERSION_CODES.S)
     private void getCurrentLocation() {
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         locationListener = new LocationListener() {
@@ -115,7 +119,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
             return;
         }
 
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.FUSED_PROVIDER, 1000, 10, locationListener);
     }
 
 

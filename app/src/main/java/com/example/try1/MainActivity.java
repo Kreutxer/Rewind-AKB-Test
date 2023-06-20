@@ -4,9 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
+import com.example.try1.ui.ViewPager.ViewPagerActivity;
 import com.example.try1.ui.home.homeFragment;
 import com.example.try1.ui.info.infoFragment;
 import com.example.try1.ui.map.MapsFragment;
@@ -22,6 +26,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         loadFragment(new homeFragment());
         BottomNavigationView bottomNavigationView = findViewById(R.id.botnav);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
+        Button button = (Button) findViewById(R.id.details);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private boolean loadFragment(Fragment fragment) {

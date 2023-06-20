@@ -2,6 +2,7 @@ package com.example.try1.ui.myLocFrag;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
@@ -11,6 +12,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +55,7 @@ public class MyLocFrag extends Fragment implements OnMapReadyCallback {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.S)
     @Override
     public void onMapReady(@NonNull GoogleMap map) {
         gmap = map;
@@ -61,6 +64,7 @@ public class MyLocFrag extends Fragment implements OnMapReadyCallback {
         getMyLocation();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.S)
     private void getMyLocation() {
         locManager = (LocationManager)  requireActivity().getSystemService(Context.LOCATION_SERVICE);
         locListen = new LocationListener() {
@@ -95,6 +99,6 @@ public class MyLocFrag extends Fragment implements OnMapReadyCallback {
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             return;
         }
-        locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locListen);
+        locManager.requestLocationUpdates(LocationManager.FUSED_PROVIDER, 1000, 10, locListen);
     }
 }
