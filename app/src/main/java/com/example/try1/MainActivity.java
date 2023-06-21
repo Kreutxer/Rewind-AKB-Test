@@ -17,6 +17,8 @@ import com.example.try1.ui.map.MapsFragment;
 import com.example.try1.ui.myLocFrag.MyLocFrag;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+//10120069 Rendy Agustin IF2//
+
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -27,13 +29,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView bottomNavigationView = findViewById(R.id.botnav);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
-        Button button = (Button) findViewById(R.id.details);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
     private boolean loadFragment(Fragment fragment) {

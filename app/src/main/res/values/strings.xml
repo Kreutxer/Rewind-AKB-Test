@@ -7,4 +7,6 @@
     <string name="info">info</string>
     <string name="index">Home</string>
     <string name="splash">splash</string>
+    <string name="red" />
+    <string name="blue" />
 </resources>

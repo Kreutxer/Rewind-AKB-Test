@@ -41,6 +41,8 @@ import com.google.android.libraries.places.api.net.PlacesClient;
 import java.util.Arrays;
 import java.util.List;
 
+//10120069 Rendy Agustin IF2//
+
 public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
     private PlacesClient placesClient;

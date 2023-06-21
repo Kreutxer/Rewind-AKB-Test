@@ -28,6 +28,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.net.PlacesClient;
 
+//10120069 Rendy Agustin IF2//
+
 public class MyLocFrag extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap gmap;

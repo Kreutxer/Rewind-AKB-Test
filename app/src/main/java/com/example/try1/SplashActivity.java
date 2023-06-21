@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+//10120069 Rendy Agustin IF2//
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override

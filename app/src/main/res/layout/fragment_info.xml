@@ -5,10 +5,22 @@
     android:layout_height="match_parent"
     tools:context=".ui.info.infoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="info_fragment" />
+        android:id="@+id/frameLay">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/details"
+                android:text="Details"/>
+        </RelativeLayout>
+
+    </FrameLayout>
 
 </FrameLayout>
