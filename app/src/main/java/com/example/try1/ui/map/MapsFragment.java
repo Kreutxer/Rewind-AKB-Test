@@ -125,7 +125,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     }
 
 
-    //method find restaurant
+    //find restaurant method
 
     private void findNearestRestaurants(double latitude, double longitude, int numRestaurants) {
         LatLngBounds bounds = new LatLngBounds(
@@ -161,7 +161,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         }
     }
 
-//get places name
+//get places name method
     private void fetchPlaceDetails(String placeId) {
         List<Place.Field> placeFields = Arrays.asList(Place.Field.NAME, Place.Field.LAT_LNG);
 

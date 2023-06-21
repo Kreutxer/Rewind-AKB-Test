@@ -29,13 +29,9 @@ public class infoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_info, container, false);
 
         Button myButton = view.findViewById(R.id.details);
-
-        // Set a click listener for the button
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Perform an action when the button is clicked
-                // For example, start a new activity
                 Intent intent = new Intent(getActivity(), ViewPagerActivity.class);
                 startActivity(intent);
             }
